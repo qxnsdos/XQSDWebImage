@@ -13,6 +13,7 @@
 		437164481F4603CC00D59BE2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 437164461F4603CC00D59BE2 /* Main.storyboard */; };
 		4371644A1F4603CC00D59BE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 437164491F4603CC00D59BE2 /* Assets.xcassets */; };
 		4371644D1F4603CC00D59BE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4371644B1F4603CC00D59BE2 /* LaunchScreen.storyboard */; };
+		437164571F46048E00D59BE2 /* DownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 437164561F46048E00D59BE2 /* DownloaderOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		437164491F4603CC00D59BE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4371644C1F4603CC00D59BE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4371644E1F4603CC00D59BE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		437164551F46048E00D59BE2 /* DownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloaderOperation.h; sourceTree = "<group>"; };
+		437164561F46048E00D59BE2 /* DownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloaderOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		4371643C1F4603CC00D59BE2 /* 23-XQSDWebImage */ = {
 			isa = PBXGroup;
 			children = (
+				437164541F46046000D59BE2 /* XQWebImage */,
 				437164401F4603CC00D59BE2 /* AppDelegate.h */,
 				437164411F4603CC00D59BE2 /* AppDelegate.m */,
 				437164431F4603CC00D59BE2 /* ViewController.h */,
@@ -77,6 +81,15 @@
 				4371643E1F4603CC00D59BE2 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		437164541F46046000D59BE2 /* XQWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				437164551F46048E00D59BE2 /* DownloaderOperation.h */,
+				437164561F46048E00D59BE2 /* DownloaderOperation.m */,
+			);
+			path = XQWebImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				437164571F46048E00D59BE2 /* DownloaderOperation.m in Sources */,
 				437164451F4603CC00D59BE2 /* ViewController.m in Sources */,
 				437164421F4603CC00D59BE2 /* AppDelegate.m in Sources */,
 				4371643F1F4603CC00D59BE2 /* main.m in Sources */,
