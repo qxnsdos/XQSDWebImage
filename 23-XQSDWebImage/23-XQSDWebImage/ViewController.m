@@ -23,6 +23,24 @@
     // 创建队列
     self.queue = [[NSOperationQueue alloc] init];
     
+    NSString *urlStr = @"http://pic.58pic.com/58pic/13/15/14/34E58PICuHd_1024.jpg";
+    //类方法实例化对象
+    DownloaderOperation *op = [DownloaderOperation downloaderOperationWithUrlString:urlStr finished:^(UIImage *image) {
+        NSLog(@"%@  %@",image,[NSThread currentThread]);
+    }];
+    
+    // 把操作添加到队列
+    [self.queue addOperation:op];
+}
+
+
+
+
+/*
+- (void)test{
+    // 创建队列
+    self.queue = [[NSOperationQueue alloc] init];
+    
     // 创建操作
     DownloaderOperation *op = [[DownloaderOperation alloc] init];
     
@@ -42,7 +60,7 @@
     // 把操作添加到队列
     [self.queue addOperation:op];
 }
-
+*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
