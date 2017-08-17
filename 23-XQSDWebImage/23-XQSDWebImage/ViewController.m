@@ -24,7 +24,10 @@
     self.queue = [[NSOperationQueue alloc] init];
     
     // 创建操作
-    NSOperation *op = [[DownloaderOperation alloc] init];
+    DownloaderOperation *op = [[DownloaderOperation alloc] init];
+    
+    //传入图片地址
+    op.urlString = @"http://pic.58pic.com/58pic/13/15/14/34E58PICuHd_1024.jpg";
     
     // 把操作添加到队列
     [self.queue addOperation:op];

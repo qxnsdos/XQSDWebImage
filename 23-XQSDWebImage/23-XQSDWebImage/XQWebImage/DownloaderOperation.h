@@ -10,4 +10,7 @@
 
 @interface DownloaderOperation : NSOperation
 
+/// 接受外界传入的图片地址
+@property(nonatomic,copy)   NSString    * urlString;
+
 @end
