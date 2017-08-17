@@ -7,7 +7,6 @@
 //
 
 #import "DownloaderOperation.h"
-#import <UIKit/UIKit.h>
 /*
  负责图片下载
  1. 需要图片网络地址(URL)
@@ -25,7 +24,15 @@
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *image = [UIImage imageWithData:data];
     
-    NSLog(@"image  %@",image);
+    
+    // B4. 图片下载完成之后,需要回调到外界
+    if (_finishedBlock != nil) {
+        // 回调block 在main方法中即为在子线程回调执行  外界使用该框架 刷新UI操作是在主线程 因此,此处不能这么写 需要回到主线程 框架使用者拿到这个东西就是要在主线程使用, 所以修改线程 
+//        self.finishedBlock(image);
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            self.finishedBlock(image);
+        }];
+    }
 }
 
 @end
