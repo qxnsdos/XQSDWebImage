@@ -42,8 +42,12 @@
 
 - (void)downloadImageWithUrlStr:(NSString *)urlStr finished:(void (^)(UIImage *))finishedBlock{
     
+    // 在建立下载操作之前,判断要建立的下载操作是否存在 (连续传入的图片地址一样)
+    if ([self.opCache objectForKey:urlStr] != nil) {
+        return;
+    }
+    
     // finishedBlock : VC传入的代码块
-
     // 此处代码块 : 单例定义的代码块 传给 DownloaderOperation  等到op下载完就回调
     void(^instanceFinishedBlock)(UIImage *) = ^(UIImage *image){
         // 回调VC传入的代码块 把image回调给VC

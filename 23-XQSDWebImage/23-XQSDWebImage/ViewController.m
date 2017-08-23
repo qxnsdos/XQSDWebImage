@@ -75,9 +75,6 @@
             // 取消的操作也要移除
             [self.opCache removeObjectForKey:self.lastUrlStr];
         }
-    }else{
-        //连续传入的图片地址一样
-        return;
     }
     
     // 记录上一次的图片地址
@@ -88,24 +85,6 @@
         // 赋值 刷新UI
         self.iconImageView.image = image;
     }];
-    
-    
-//    // 把随机图片地址传入 DownloaderOperation
-//    DownloaderOperation *op = [DownloaderOperation downloaderOperationWithUrlString:app.icon finished:^(UIImage *image) {
-////        NSLog(@"%@  %@",image,[NSThread currentThread]);
-//        
-//        // 刷新UI
-//        self.iconImageView.image = image;
-//        
-//        // 图片下载完成之后 取消下载操作
-//        [self.opCache removeObjectForKey:app.icon];
-//    }];
-//    
-//    // 把下载操作添加到操作缓存池
-//    [self.opCache setObject:op forKey:app.icon];
-//    
-//    // 把操作添加到队列
-//    [self.queue addOperation:op];
 }
 
 
