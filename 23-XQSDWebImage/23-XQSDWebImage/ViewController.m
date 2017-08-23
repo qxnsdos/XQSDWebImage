@@ -69,6 +69,7 @@
         // 取消上次操作
         DownloaderOperation *op = [self.opCache objectForKey:self.lastUrlStr];
         if (op != nil) {
+            // 仅仅修改了canCeled的属性为YES而已
             [op cancel];
             // 取消的操作也要移除
             [self.opCache removeObjectForKey:self.lastUrlStr];
