@@ -11,6 +11,7 @@
 #import "AFNetworking.h"
 #import "APPModel.h"
 #import "YYModel.h"
+#import "DownloaderOperationManager.h"
 
 @interface ViewController ()
 
@@ -80,24 +81,31 @@
     }
     
     // 记录上一次的图片地址
-    self.lastUrlStr = app.icon;
+    self.lastUrlStr = app.icon;     
     
-    // 把随机图片地址传入 DownloaderOperation
-    DownloaderOperation *op = [DownloaderOperation downloaderOperationWithUrlString:app.icon finished:^(UIImage *image) {
-//        NSLog(@"%@  %@",image,[NSThread currentThread]);
-        
-        // 刷新UI
+    /// 单例管理下载操作
+    [[DownloaderOperationManager sharedManager] downloadImageWithUrlStr:app.icon finished:^(UIImage *image) {
+        // 赋值 刷新UI
         self.iconImageView.image = image;
-        
-        // 图片下载完成之后 取消下载操作
-        [self.opCache removeObjectForKey:app.icon];
     }];
     
-    // 把下载操作添加到操作缓存池
-    [self.opCache setObject:op forKey:app.icon];
     
-    // 把操作添加到队列
-    [self.queue addOperation:op];
+//    // 把随机图片地址传入 DownloaderOperation
+//    DownloaderOperation *op = [DownloaderOperation downloaderOperationWithUrlString:app.icon finished:^(UIImage *image) {
+////        NSLog(@"%@  %@",image,[NSThread currentThread]);
+//        
+//        // 刷新UI
+//        self.iconImageView.image = image;
+//        
+//        // 图片下载完成之后 取消下载操作
+//        [self.opCache removeObjectForKey:app.icon];
+//    }];
+//    
+//    // 把下载操作添加到操作缓存池
+//    [self.opCache setObject:op forKey:app.icon];
+//    
+//    // 把操作添加到队列
+//    [self.queue addOperation:op];
 }
 
 

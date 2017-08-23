@@ -13,6 +13,7 @@
  2.
  */
 
+
 @interface DownloaderOperation()
 
 /// 接受外界传入的图片地址
@@ -55,7 +56,7 @@
         return;
     }
     
-    // B4. 图片下载完成之后,需要回调到外界
+    // B4. 图片下载完成之后,需要回调单例传入的代码块,把图片数据回调给单例
     if (_finishedBlock != nil) {
         // 回调block 在main方法中即为在子线程回调执行  外界使用该框架 刷新UI操作是在主线程 因此,此处不能这么写 需要回到主线程 框架使用者拿到这个东西就是要在主线程使用, 所以修改线程 
 //        self.finishedBlock(image);

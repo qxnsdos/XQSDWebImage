@@ -39,6 +39,7 @@
 		437164A51F461C9C00D59BE2 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371648B1F461C9C00D59BE2 /* NSObject+YYModel.m */; };
 		437164A61F461C9C00D59BE2 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4371648D1F461C9C00D59BE2 /* YYClassInfo.m */; };
 		437164A91F461CA700D59BE2 /* APPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 437164A81F461CA700D59BE2 /* APPModel.m */; };
+		437164AC1F4D800400D59BE2 /* DownloaderOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 437164AB1F4D800400D59BE2 /* DownloaderOperationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,6 +108,8 @@
 		4371648E1F461C9C00D59BE2 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		437164A71F461CA700D59BE2 /* APPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPModel.h; sourceTree = "<group>"; };
 		437164A81F461CA700D59BE2 /* APPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPModel.m; sourceTree = "<group>"; };
+		437164AA1F4D800400D59BE2 /* DownloaderOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloaderOperationManager.h; sourceTree = "<group>"; };
+		437164AB1F4D800400D59BE2 /* DownloaderOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloaderOperationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 			children = (
 				437164551F46048E00D59BE2 /* DownloaderOperation.h */,
 				437164561F46048E00D59BE2 /* DownloaderOperation.m */,
+				437164AA1F4D800400D59BE2 /* DownloaderOperationManager.h */,
+				437164AB1F4D800400D59BE2 /* DownloaderOperationManager.m */,
 			);
 			path = XQWebImage;
 			sourceTree = "<group>";
@@ -352,6 +357,7 @@
 				4371643F1F4603CC00D59BE2 /* main.m in Sources */,
 				437164A91F461CA700D59BE2 /* APPModel.m in Sources */,
 				437164971F461C9C00D59BE2 /* SDImageCache.m in Sources */,
+				437164AC1F4D800400D59BE2 /* DownloaderOperationManager.m in Sources */,
 				4371649E1F461C9C00D59BE2 /* UIButton+WebCache.m in Sources */,
 				437164961F461C9C00D59BE2 /* NSData+ImageContentType.m in Sources */,
 				437164921F461C9C00D59BE2 /* AFURLRequestSerialization.m in Sources */,
@@ -509,6 +515,7 @@
 				437164531F4603CC00D59BE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
