@@ -23,4 +23,6 @@
  */
 - (void)downloadImageWithUrlStr:(NSString *)urlStr finished:(void (^)(UIImage *image))finishedBlock;
 
+- (void)cancelledOperation:(NSString *)lastUrlStr;
+
 @end

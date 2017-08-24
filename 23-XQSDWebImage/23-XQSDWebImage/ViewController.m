@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "DownloaderOperation.h"
+//#import "DownloaderOperation.h"
 #import "AFNetworking.h"
 #import "APPModel.h"
 #import "YYModel.h"
@@ -16,13 +16,13 @@
 @interface ViewController ()
 
 /// 全局并发队列
-@property(nonatomic,strong)   NSOperationQueue      * queue;
+//@property(nonatomic,strong)   NSOperationQueue      * queue;
 /// 数据源数组
 @property(nonatomic,strong)   NSArray               * dataSourceArr;
 /// 图片控件
 @property (weak, nonatomic) IBOutlet UIImageView    * iconImageView;
 /// 下载操作缓存池
-@property(nonatomic,strong)   NSMutableDictionary   * opCache;
+//@property(nonatomic,strong)   NSMutableDictionary   * opCache;
 /// 上次的图片地址
 @property(nonatomic,strong)   NSString              * lastUrlStr;
 @end
@@ -33,8 +33,8 @@
     [super viewDidLoad];
     
     // 创建队列   / 下载操作缓存池
-    self.queue = [[NSOperationQueue alloc] init];
-    self.opCache = [[NSMutableDictionary alloc] init];
+//    self.queue = [[NSOperationQueue alloc] init];
+//    self.opCache = [[NSMutableDictionary alloc] init];
     
     // 没有实际意义 测试自定义操作是否可行 为了提供数据 有了数据再点击屏幕
     [self loadData];
@@ -67,14 +67,18 @@
     
     // 判断 连续传入的图片地址是否一样 不一样:取消上次正在执行的操作  反之:就返回 不再建立下载操作
     if (![app.icon isEqualToString:self.lastUrlStr]) {
+        
+        // 单例管理取消操作
+        [[DownloaderOperationManager sharedManager] cancelledOperation:self.lastUrlStr];
+        
         // 取消上次操作
-        DownloaderOperation *op = [self.opCache objectForKey:self.lastUrlStr];
-        if (op != nil) {
-            // 仅仅修改了canCeled的属性为YES而已
-            [op cancel];
-            // 取消的操作也要移除
-            [self.opCache removeObjectForKey:self.lastUrlStr];
-        }
+//        DownloaderOperation *op = [self.opCache objectForKey:self.lastUrlStr];
+//        if (op != nil) {
+//            // 仅仅修改了canCeled的属性为YES而已
+//            [op cancel];
+//            // 取消的操作也要移除
+//            [self.opCache removeObjectForKey:self.lastUrlStr];
+//        }
     }
     
     // 记录上一次的图片地址
